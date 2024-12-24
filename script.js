@@ -1,8 +1,8 @@
 let userScore = 0;
 let compScore = 0;
 
-let userChoice = 0;
-let compChoice = 0;
+let userChoice = "";
+let compChoice = "";
 
 let rock = document.getElementById("rock");
 let paper = document.getElementById("paper");
@@ -27,7 +27,7 @@ scissors.addEventListener("click", () => {
     checkResult();
 });
 
-function getCompChoice() {
+function generateCompChoice() {
     if(Math.random() < 0.33) {
         compChoice = "rock";
     }
@@ -42,14 +42,15 @@ function getCompChoice() {
 function checkResult() {
     if (userChoice === compChoice) {
         msg.innerText = "It's a tie!";
+        msg.style.backgroundColor = "grey";
     }
     else if (userChoice === "rock" && compChoice === "scissors" || userChoice == "scissors" && compChoice == "paper" || userChoice === "paper" && compChoice === "rock") {
-        msg.innerText = `Congratulations🎉 You Win!\n${userChoice} beats ${compChoice}`;
+        msg.innerText = `Congratulations🎉 You Win!\n${userChoice.toUpperCase()} beats ${compChoice.toUpperCase()}`;
         msg.style.backgroundColor = "rgb(71, 255, 71)";
         msg.style.color = "yellow";
     }
     else {
-        msg.innerText = `Oops! You Lose!\n${compChoice} beats ${userChoice}`;
+        msg.innerText = `Oops! You Lose!\n${compChoice.toUpperCase()} beats ${userChoice.toUpperCase()}`;
         msg.style.backgroundColor = "rgb(255, 55, 55)";
         msg.style.color = "rgb(110, 110, 110)";
     }
