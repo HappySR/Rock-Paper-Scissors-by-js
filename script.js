@@ -59,14 +59,14 @@ function checkResult() {
         msg.style.color = "white";
     }
     else if (userChoice === "rock" && compChoice === "scissors" || userChoice == "scissors" && compChoice == "paper" || userChoice === "paper" && compChoice === "rock") {
-        msg.innerText = `Congratulations🎉 You Win!\n${userChoice.toUpperCase()} beats ${compChoice.toUpperCase()}`;
+        msg.innerText = `Congratulations🎉 You Win!\nYour ${userChoice.toUpperCase()} beats ${compChoice.toUpperCase()}`;
         msg.style.backgroundColor = "rgb(71, 255, 71)";
         msg.style.color = "yellow";
         userScore++;
         userScoreBoard.innerText = userScore;
     }
     else {
-        msg.innerText = `Oops! You Lose!\n${compChoice.toUpperCase()} beats ${userChoice.toUpperCase()}`;
+        msg.innerText = `Oops! You Lose!\n${compChoice.toUpperCase()} beats your ${userChoice.toUpperCase()}`;
         msg.style.backgroundColor = "rgb(255, 55, 55)";
         msg.style.color = "rgb(110, 110, 110)";
         compScore++;
